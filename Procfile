@@ -1,1 +1,1 @@
-web: gunicorn app_dash:server --timeout 600
+web: gunicorn --workers=2 --timeout 600 app_dash:server 
