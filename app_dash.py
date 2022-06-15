@@ -29,10 +29,6 @@ df = pickle.load(data)
 app = Dash(__name__)
 server = app.server
 
-df['Err'] = list(map(lambda x: np.abs(df['true'][x].squeeze() - df['pred'][x]), range(len(df))))
-
-app = Dash(__name__)
-
 app.layout = html.Div([
     html.H1(children="Absolute error analysis", style={'textAlign': 'center'}),
     html.Div([
