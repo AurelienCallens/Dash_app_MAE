@@ -27,6 +27,7 @@ data = bz2.BZ2File('df.pbz2', 'rb')
 df = pickle.load(data)
 
 app = Dash(__name__)
+server = app.server
 
 df['Err'] = list(map(lambda x: np.abs(df['true'][x].squeeze() - df['pred'][x]), range(len(df))))
 
